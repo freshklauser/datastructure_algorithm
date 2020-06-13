@@ -38,7 +38,10 @@ from abstract.trees.binary_tree import BinaryTree
 
 def build_parse_tree(expression_input):
     """
-    :param expression_input: 表达式必须要求各元素 空格 隔开，如"( 82 + 2 ) * 2"
+    输入要求：
+        （1）每两个操作数和中间的操作符构成的运算都必须用 () 括起来，
+        （2）且元素将必须 空格 隔开 如"( 82 + 2 ) * 2"
+    :param expression_input:
     :return:
     """
     if not isinstance(expression_input, str):
@@ -82,6 +85,11 @@ def build_parse_tree(expression_input):
 
 
 def evaluate(parse_binary_tree):
+    """
+    计算解析树表达式
+    :param parse_binary_tree:
+    :return:
+    """
     operator_hash = {'+': operator.add,
                      '-': operator.sub,
                      '*': operator.mul,
@@ -101,7 +109,7 @@ def evaluate(parse_binary_tree):
 
 
 if __name__ == '__main__':
-    exp = "( ( 82 + 2 ) * 5 - ( 4 * 20 / 5 ) )"
+    exp = "( ( ( 82 + 2 ) * 5 ) - ( ( 4 * 20 ) / 5 ) )"
     # ['(', '(', '82', '+', '2', ')', '*', '5', ')']
     ptree = build_parse_tree(exp)
     result = evaluate(ptree)
