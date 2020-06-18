@@ -548,7 +548,17 @@
       print(res)
   ```
 
+## 4. 字符串
+
+### 4.1 回文字符串  -- 双指针法
+
+- 回文字符串基本解法： <font color=font>双指针法</font>
+
+- 总体思路：设置<font color=red>头尾指针</font>，如果双指针的字符相同，指针往中间挪动，继续检查
+
   
+
+
 
 ## 附录
 
@@ -668,6 +678,19 @@ In [38]: for i in itertools.combinations_with_replacement('ABD', 2):
 ('B', 'B')
 ('B', 'D')
 ('D', 'D')
+```
+
+### A3 字符串内置方法
+
+```
+str.count(str, beg=0, end=len(string))  		# 返回 str 在 string 里面出现的次数
+str.startswith(obj, beg=0, end=len(string))		
+str.endswith(obj, beg=0, end=len(string))		
+
+str.isalnum()		#  string 至少有一个字符并且所有字符都是字母或数字
+str.isalpha()
+str.isdigit()		# 如果 string 只包含数字则返回 True 否则返回 False.
+str.isnumeric()		# 如果 string 中只包含数字字符，则返回 True，否则返回 False
 ```
 
 
